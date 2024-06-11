@@ -1,15 +1,14 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "WebIII/wsgi.py",
+      "src": "WebIII/WebIII/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      "config": { "maxLambdaSize": "50mb" }
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "WebIII/wsgi.py"
-    }
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/(.*)", "dest": "WebIII/WebIII/wsgi.py" }
   ]
 }
