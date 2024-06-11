@@ -84,8 +84,8 @@ DATABASES = {
     }
 }
 
-database_url = os.environ.get('DATABASE_URL')
-DATABASES['default'] = dj_database_url.parse("postgres://webiii_publicacoes_user:906S6dvc6T1LSOjZ1Np6uMWsH7QqdVao@dpg-cpk8kna0si5c73cmgk8g-a/webiii_publicacoes")
+DATABASE_URL = os.environ.get('DATABASE_URL')
+DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
 
 
 
@@ -123,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
